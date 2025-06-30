@@ -42,7 +42,7 @@ sudo apt install -y podman-compose
 podman --version
 ```
 
-## Node.js + Express + PostgreSQL環境の構築
+## Podman Composeを使った環境構築
 
 このリポジトリには、Node.js（Express）とPostgreSQLを使った開発環境のためのpodman-compose.yamlが含まれています。
 
@@ -54,41 +54,24 @@ podman --version
 
 ### 使用方法
 
-#### 1. プロジェクトディレクトリの準備
-```bash
-mkdir app
-```
-
-#### 2. package.jsonの作成（app/package.json）
-```bash
-cd app
-npm init -y
-```
-
-#### 3. 必要なパッケージのインストール
-```bash
-npm install express pg dotenv
-npm install -D nodemon
-```
-
-#### 4. 環境の起動
+#### 1. 環境の起動
 ```bash
 podman-compose up -d
 ```
 
-#### 5. データベースの確認
+#### 2. アプリケーションの確認
 起動後、以下のURLにアクセスしてデータベースの情報を確認できます：
 ```
 http://localhost:3000/api/users
 ```
 初期データとして3人のユーザー情報（山田太郎、佐藤花子、田中次郎）が表示されます。
 
-#### 6. 環境の停止
+#### 3. 環境の停止
 ```bash
 podman-compose down
 ```
 
-#### 7. ログの確認
+#### 4. ログの確認
 ```bash
 podman-compose logs -f app
 ```
