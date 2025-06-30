@@ -19,6 +19,25 @@ wsl --install
 wsl --list --verbose
 ```
 
+### WSLの起動
+PowerShellを起動して以下のコマンドを実行：
+```powershell
+wsl
+```
+
+### Gitのインストール（必要な場合）
+WSL内でGitがインストールされていない場合は、以下のコマンドでインストール：
+```bash
+sudo apt update
+sudo apt install -y git
+```
+
+### プロジェクトのクローン
+```bash
+git clone https://github.com/saito2025/podman-example
+cd podman-example
+```
+
 ## Ubuntu/Debian系でのインストール
 
 ### 1. パッケージリストを更新
